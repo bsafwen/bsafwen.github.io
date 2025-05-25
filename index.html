@@ -102,7 +102,10 @@
           }
         };
         triggerMutations.textContent = "TRIGGER";
-        document.body.prepend(triggerMutations);
+        // wait for the page to load before appending the button
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.appendChild(triggerMutations);
+        });
       })();
     </script>
     <style>
